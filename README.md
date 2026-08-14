@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cozy Grove
 
-## Getting Started
+Website for Cozy Grove, a 24-hour certified care home and Direct Support Professional (DSP) provider in Scappoose, Oregon serving individuals with intellectual and developmental disabilities. I built this pro bono.
 
-First, run the development server:
+Next.js with `next-intl`. The site is bilingual, English and Arabic, so that Arabic-speaking families can read it in their own language. Arabic renders right-to-left.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Structure
+
+Every route is nested under `app/[locale]/`, so the same pages exist in both languages and all copy comes from `messages/en.json` and `messages/ar.json` rather than being written into the components.
+
+```
+app/[locale]/page.tsx                home
+app/[locale]/about/page.tsx
+app/[locale]/contact/page.tsx
+app/[locale]/services/care-home/page.tsx
+app/[locale]/services/dsp/page.tsx
+messages/en.json                     English copy
+messages/ar.json                     Arabic copy
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Adding or changing text means editing the two message files. A missing key in one language is the thing to watch for, since it falls back rather than failing loudly.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Running it
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install
+npm run dev       # localhost:3000
+npm run build
+```
