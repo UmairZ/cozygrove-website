@@ -78,7 +78,6 @@ export default async function AboutPage() {
                 <p>{t('story.p2')}</p>
                 <p>{t('story.p3')}</p>
               </div>
-              <p className="mt-6 text-xs text-dark/30 italic">{t('story.placeholder')}</p>
             </div>
 
             {/* Visual accent block */}
@@ -120,7 +119,6 @@ export default async function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
               <p className="text-mid leading-relaxed mb-4">{t('team.body')}</p>
-              <p className="text-xs text-dark/30 italic">{t('team.placeholder')}</p>
             </div>
 
             <div className="card-warm p-8">
